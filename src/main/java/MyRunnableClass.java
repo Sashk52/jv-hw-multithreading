@@ -10,11 +10,9 @@ public class MyRunnableClass implements Runnable {
 
     @Override
     public void run() {
-        int i = 0;
-        while (i < 100) {
+        while (counter.getCount() < 100) {
             counter.count();
             logger.info(Thread.currentThread().getName() + " counter = " + counter.getCount());
-            i++;
         }
     }
 }
