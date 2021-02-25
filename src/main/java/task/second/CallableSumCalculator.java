@@ -3,12 +3,12 @@ package task.second;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-public class CallableImpl implements Callable<Integer> {
+public class CallableSumCalculator implements Callable<Integer> {
     private final List<Integer> integerList;
     private final int start;
     private final int end;
 
-    public CallableImpl(List<Integer> integerList, int start, int end) {
+    public CallableSumCalculator(List<Integer> integerList, int start, int end) {
         this.integerList = integerList;
         this.start = start;
         this.end = end;

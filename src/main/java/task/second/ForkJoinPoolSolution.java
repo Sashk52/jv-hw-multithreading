@@ -25,7 +25,7 @@ public class ForkJoinPoolSolution extends RecursiveTask<Integer> {
     }
 
     @Override
-    protected Integer compute() {
+    public Integer compute() {
         if (integerList.size() > THRESHOLD) {
             return ForkJoinTask.invokeAll(createTasks())
                     .stream()

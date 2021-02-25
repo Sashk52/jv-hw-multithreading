@@ -1,9 +1,9 @@
-package task.second;
-
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import task.second.ForkJoinPoolSolution;
+import task.second.ListCreator;
 
 public class ForkJoinPoolSolutionTest {
     private static ListCreator listCreator;

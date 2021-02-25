@@ -22,7 +22,7 @@ public class ExecutorServiceSolution {
         ExecutorService executorService = Executors.newFixedThreadPool(THREADS);
         List<Callable<Integer>> callableTasks = new ArrayList<>();
         for (int i = 0; i < NUMBER_OF_THREADS; i++) {
-            callableTasks.add(new CallableImpl(integerList,
+            callableTasks.add(new CallableSumCalculator(integerList,
                     i * size / NUMBER_OF_THREADS,
                     (i + 1) * size / NUMBER_OF_THREADS));
         }
@@ -38,8 +38,6 @@ public class ExecutorServiceSolution {
             throw new RuntimeException("Can't invoke all callableTasks", e);
         } catch (ExecutionException e) {
             throw new RuntimeException("Can't get all callableTasks", e);
-        } finally {
-            executorService.shutdown();
         }
     }
 }
